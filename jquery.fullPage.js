@@ -142,6 +142,7 @@
             //design
             controlArrows: true,
             controlArrowColor: '#fff',
+            controlArrowsHide: false,
             verticalCentered: true,
             resize: false,
             sectionsColor : [],
@@ -776,7 +777,7 @@
                 section.find(SLIDES_ARROW_PREV_SEL).css('border-color', 'transparent '+ options.controlArrowColor + ' transparent transparent');
             }
 
-            if(!options.loopHorizontal){
+            if(!options.loopHorizontal && options.controlArrowsHide){
                 section.find(SLIDES_ARROW_PREV_SEL).hide();
             }
         }
@@ -1836,7 +1837,7 @@
                 lazyLoad(destiny);
             }
 
-            if(!options.loopHorizontal && options.controlArrows){
+            if(!options.loopHorizontal && options.controlArrows && options.controlArrowsHide){
                 //hidding it for the fist slide, showing for the rest
                 section.find(SLIDES_ARROW_PREV_SEL).toggle(slideIndex!==0);
 
